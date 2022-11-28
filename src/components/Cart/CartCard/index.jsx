@@ -1,27 +1,25 @@
 import React from "react"
 import { StyledCartProduct } from "./style"
 
-export const CartProduct = (currentSale, removeCurrentSale) => {
-  const data = currentSale.product;
-
+export const CartProduct = ({ product, remove }) => {
   return (
     <StyledCartProduct>
       <div>
         <div>
-          <img src={data.img} alt="" />
+          <img src={product.img} alt="" />
         </div>
         <div>
-          <h2 className="title one">{data.name}</h2>
-          <p className="paragraph two">{data.category}</p>
+          <h2 className="title one">{product.name}</h2>
+          <p className="paragraph two">{product.category}</p>
         </div>
       </div>
       <button
-        onClick={() => removeCurrentSale(currentSale.product.id)}
+        onClick={() => remove(product.id)}
         className="text two"
+        type="button"
       >
         Remover
       </button>
     </StyledCartProduct>
   )
 }
-

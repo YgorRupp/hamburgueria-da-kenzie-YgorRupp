@@ -8,7 +8,7 @@ export const HomePage = ({
   list,
   addCurrentSale,
   currentSale,
-  removeCurrentSale,
+  remove,
   filter,
   setFilter,
 }) => {
@@ -22,7 +22,7 @@ export const HomePage = ({
         ></ProductsList>
         <Cart
           currentSale={currentSale}
-          removeCurrentSale={removeCurrentSale}
+          remove={remove}
         ></Cart>
       </StyledHome>
     </div>

@@ -21,8 +21,9 @@ export function App() {
       toast.error("Esse produto já foi adcionado")
     }
   }
-  function removeCurrentSale(productId) {
-    const newList = currentSale.filter((product) => product.id !== productId);
+  function remove(id) {
+    const newList = currentSale.filter((product) => product.id !== id);
+    console.log(id)
     setCurrentSale(newList);
     toast.warn("Produto removido com sucesso")
   }
@@ -49,7 +50,7 @@ export function App() {
           list={list}
           addCurrentSale={addCurrentSale}
           currentSale={currentSale}
-          removeCurrentSale={removeCurrentSale}
+          remove={remove}
         ></HomePage>
       </div>
       <ToastContainer

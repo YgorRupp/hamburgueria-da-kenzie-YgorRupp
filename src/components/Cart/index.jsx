@@ -1,9 +1,9 @@
 import React from "react"
-import {CartProduct} from "./CartCard"
-import {CartTotal} from "./CartTotal"
+import { CartProduct } from "./CartCard"
+import { CartTotal } from "./CartTotal"
 import { StyledCart } from "./style"
 
-export const Cart = ({ currentSale, index, removeCurrentSale, list }) => {
+export const Cart = ({ currentSale, remove, list }) => {
   return (
     <StyledCart>
       <div>
@@ -11,12 +11,11 @@ export const Cart = ({ currentSale, index, removeCurrentSale, list }) => {
           <h2 className="title one">Carrinho de compras</h2>
         </section>
         <ul>
-          {currentSale.map((product) => (
+          {currentSale.map((product, index) => (
             <CartProduct
               key={index}
-              currentSale={currentSale}
               product={product}
-              removeCurrentSale={removeCurrentSale}
+              remove={remove}
             ></CartProduct>
           ))}
           <CartTotal currentSale={currentSale} list={list}></CartTotal>
@@ -25,5 +24,3 @@ export const Cart = ({ currentSale, index, removeCurrentSale, list }) => {
     </StyledCart>
   )
 }
-
-
