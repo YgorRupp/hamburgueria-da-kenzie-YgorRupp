@@ -9,16 +9,19 @@ export const HomePage = ({
   addCurrentSale,
   currentSale,
   remove,
-  filter,
+  filterProducts,
+  filtered,
+  click,
   setFilter,
 }) => {
   return (
     <div>
-      <Header filter={filter} setFilter={setFilter}></Header>
+      <Header setFilter={setFilter} click={click} filterProducts={filterProducts}></Header>
       <StyledHome>
         <ProductsList
           list={list}
           addCurrentSale={addCurrentSale}
+          filtered={filtered}
         ></ProductsList>
         <Cart
           currentSale={currentSale}

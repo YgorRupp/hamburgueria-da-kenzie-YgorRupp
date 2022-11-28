@@ -1,8 +1,7 @@
 import React from "react"
-import {InputSearch} from "../inputSearch"
 import { StyledHeader } from "./style"
 
-export const Header = ({setFilter }) => {
+export const Header = ({ setFilter, click }) => {
   return (
     <StyledHeader>
       <section>
@@ -10,10 +9,17 @@ export const Header = ({setFilter }) => {
           Burger <span>Kenzie</span>
         </p>
         <form>
-          <InputSearch setFilter={setFilter}></InputSearch>
-          <button className="text one">Pesquisar</button>
+          <input 
+            onChange={setFilter}
+            type="text"
+            placeholder="Digitar Pesquisa"
+          />
+          <button onClick={click} type="button"className="text one">
+            Pesquisar
+          </button>
         </form>
       </section>
     </StyledHeader>
+
   )
 }

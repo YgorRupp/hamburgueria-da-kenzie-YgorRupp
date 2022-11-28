@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react"
-import {HomePage} from "./pages/home"
+import { HomePage } from "./pages/home"
 import { api } from "./services/api"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 export function App() {
+
   const [list, setList] = useState([])
   const [currentSale, setCurrentSale] = useState([])
-  const [filter, setFilter] = useState("")
+  const [filter, setFilter] = useState([])
+  const [itemFilter, setItemFilter] = useState("")
 
-  const filterProducts = list.filter((product) =>
-    filter === "" ? true : product.name === filter
-  )
+  
+  function filterProducts() {
+
+    const filteredProducts = itemFilter.toLowerCase()
+
+    const products = list.filter(
+      (product) =>
+        product.category.toLowerCase().includes(filteredProducts) ||
+        product.name.toLowerCase().includes(filteredProducts)
+    )
+    products.length === 0 ? (toast.warn("Produto não encontrado")) : (setFilter(products))
+    
+  }
 
   function addCurrentSale(product) {
     if (!currentSale.some((productCart) => productCart.id === product.id)) {
@@ -22,9 +34,8 @@ export function App() {
     }
   }
   function remove(id) {
-    const newList = currentSale.filter((product) => product.id !== id);
-    console.log(id)
-    setCurrentSale(newList);
+    const newList = currentSale.filter((product) => product.id !== id)
+    setCurrentSale(newList)
     toast.warn("Produto removido com sucesso")
   }
 
@@ -45,12 +56,14 @@ export function App() {
     <>
       <div className="App">
         <HomePage
-          filter={filter}
-          setFilter={filter}
+          setFilter={(e => setItemFilter(e.target.value))}
+          click={filterProducts}
+          filterProducts={filterProducts}
           list={list}
           addCurrentSale={addCurrentSale}
           currentSale={currentSale}
           remove={remove}
+          filtered={filter}
         ></HomePage>
       </div>
       <ToastContainer
