@@ -6,8 +6,10 @@ import { CartTotal } from "../Modal/CartTotal";
 
 const CartModal = () => {
   const { currentSale, showModal, setShowModal } = useContext(UserContext);
+
   return (
-    showModal && (
+    <>
+      {showModal && (
       <StyledCartModal>
         <div className="modalBox">
           <section>
@@ -22,7 +24,8 @@ const CartModal = () => {
           </ul>
         </div>
       </StyledCartModal>
-    )
+      )}
+    </>
   );
 };
 

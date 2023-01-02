@@ -4,13 +4,14 @@ import CartModal from "../../components/Modal";
 import { ProductsList } from "../../components/ProductsList";
 import { StyledHome } from "./style";
 
+
 export const HomePage = () => {
   return (
     <div>
       <Header></Header>
       <StyledHome>
-        <ProductsList></ProductsList>
-        <CartModal></CartModal>
+        <ProductsList />
+        <CartModal />
       </StyledHome>
     </div>
   );
