@@ -1,34 +1,17 @@
-import React from "react"
-import {Cart} from "../../components/Cart"
-import {Header} from "../../components/Header"
-import {ProductsList} from "../../components/ProductsList"
-import { StyledHome } from "./style"
+import React from "react";
+import { Header } from "../../components/Header";
+import CartModal from "../../components/Modal";
+import { ProductsList } from "../../components/ProductsList";
+import { StyledHome } from "./style";
 
-export const HomePage = ({
-  list,
-  addCurrentSale,
-  currentSale,
-  remove,
-  filterProducts,
-  filtered,
-  click,
-  setFilter,
-}) => {
+export const HomePage = () => {
   return (
     <div>
-      <Header setFilter={setFilter} click={click} filterProducts={filterProducts}></Header>
+      <Header></Header>
       <StyledHome>
-        <ProductsList
-          list={list}
-          addCurrentSale={addCurrentSale}
-          filtered={filtered}
-        ></ProductsList>
-        <Cart
-          currentSale={currentSale}
-          remove={remove}
-        ></Cart>
+        <ProductsList></ProductsList>
+        <CartModal></CartModal>
       </StyledHome>
     </div>
-  )
-}
-
+  );
+};

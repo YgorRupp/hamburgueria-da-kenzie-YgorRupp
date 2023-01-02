@@ -54,6 +54,10 @@ export const StyledHeader = styled.header`
         margin-right: 10px;
         color: #FFFFFF;
     }
+    .headerButton {
+        display: flex;
+        gap: 20px;
+    }
     @media (min-width: 1024px) {
         display: flex;
         justify-content: space-between;

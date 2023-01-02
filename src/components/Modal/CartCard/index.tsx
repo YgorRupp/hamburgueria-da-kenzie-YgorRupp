@@ -1,7 +1,12 @@
-import React from "react"
-import { StyledCartProduct } from "./style"
+import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
+import { iProductsProps } from "../../ProductsList/Card";
+import { StyledCartProduct } from "./style";
 
-export const CartProduct = ({ product, remove }) => {
+export const CartProduct = ({ product }: iProductsProps) => {
+  const { remove } = useContext(CartContext);
+
   return (
     <StyledCartProduct>
       <div>
@@ -21,5 +26,5 @@ export const CartProduct = ({ product, remove }) => {
         Remover
       </button>
     </StyledCartProduct>
-  )
-}
+  );
+};
