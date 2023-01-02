@@ -74,7 +74,7 @@ export const StyledHeader = styled.header`
             justify-content: space-between;
         }
         form {
-            width: 26%;
+            width: 62%;
             margin-right: 50px;
         }
     }
@@ -87,11 +87,17 @@ export const StyledHeader = styled.header`
         p{
             width: 350px;
         }
+        .headerButton{
+            margin-right: 100px;
+        }
     }
     @media (min-width: 1800px) {
         form{
-            width: 24%;
+            width: 54%;
             margin-right: 130px;
+        }
+        .headerButton{
+            margin-right: 187px;
         }
     }
 `

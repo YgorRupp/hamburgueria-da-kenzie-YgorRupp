@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { StyledHeader } from "./style";
-// import openModalCart from "../../assets/openModal.svg"
-// import logout from "../../assets/logout.svg"
+import openModalCart from "../../assets/openModal.svg"
+import logout from "../../assets/logout.svg"
 
 export const Header = () => {
   const { setItemFilter, setFilter, filterProducts, setShowModal, Logout } =
@@ -29,10 +29,10 @@ export const Header = () => {
               Pesquisar
             </button>
           </form>
-          <button onClick={() => setShowModal(true)}>Cart</button>
-          {/* <img src={openModalCart} alt="" /> */}
-          {/* <img src={logout} alt="" /> */}
-          <button onClick={() => Logout()}>Logout</button>
+          {/* <button onClick={() => setShowModal(true)}>Cart</button> */}
+          <img onClick={() => setShowModal(true)} src={openModalCart} alt="" />
+          <img onClick={() => Logout()} src={logout} alt="" />
+          {/* <button onClick={() => Logout()}>Logout</button> */}
         </div>
       </section>
     </StyledHeader>

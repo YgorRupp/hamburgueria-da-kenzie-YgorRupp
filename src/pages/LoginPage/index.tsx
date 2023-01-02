@@ -5,6 +5,10 @@ import logo from "../../assets/Mask Group.svg";
 import textLogin from "../../assets/TextoLogin.svg";
 import shoppingBag from "../../assets/shopping-bag.svg";
 
+
+
+
+
 const LoginPage = () => {
   return (
     <StyledDivLogin>
